@@ -1,0 +1,19 @@
+# Neovim session files
+*.vim
+
+# Swap and backup files
+*.swp
+*.swo
+*~
+
+# Persistent undo directory
+undodir/
+
+# Log files
+*.log
+
+# Plugin directories (managed by package managers)
+# lazy.nvim downloads plugins to ~/.local/share/nvim/lazy by default,
+# but adding this prevents them from being committed if you change the path.
+lazy/
+pack/

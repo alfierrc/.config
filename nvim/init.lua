@@ -1,13 +1,22 @@
+-- 2 space tab
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+
+-- leader = space
 vim.g.mapLeader = " "
 
+-- load lazy.nvim
 require("config.lazy")
 
-vim.cmd("colorscheme kanagawa-dragon")
+-- persistant undo
+local undodir = vim.fn.stdpath('data') .. '/undodir'
+if vim.fn.isdirectory(undodir) == 0 then
+  vim.fn.mkdir(undodir, 'p')
+end
+vim.opt.undodir = undodir
+vim.opt.undofile = true
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+
+
