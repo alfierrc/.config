@@ -17,3 +17,6 @@ undodir/
 # but adding this prevents them from being committed if you change the path.
 lazy/
 pack/
+
+# tmux plugins
+/tmux/plugins/*
